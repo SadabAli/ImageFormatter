@@ -1,0 +1,9 @@
+1) https://getbootstrap.com/docs/5.3/getting-started/introduction/(frontend)
+
+2) https://flask.palletsprojects.com/en/1.1.x/patterns/fileuploads/(Uploading Files)
+
+3) https://flask.palletsprojects.com/en/2.3.x/patterns/flashing/(Message Flashing)
+
+4) https://stackoverflow.com/questions/34902378/where-do-i-get-secret-key-for-flask(secrate key for flask)
+
+5) https://openai.com/chatgpt/

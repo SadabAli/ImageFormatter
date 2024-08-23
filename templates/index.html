@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ImageFormatter</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/index.css">
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Home</a>
+            <a class="navbar-brand" href="/">Contact</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/about">About</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+     
+        {% for category, message in messages %} 
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Success!</strong> {{ message | safe}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        {% endfor %}
+
+    {% endif %}
+    {% endwith %}
+
+    
+
+
+
+    <div class="container my-4">
+
+        <h1 class="fs-2 text">ImageFormatter Web app</h1>
+        <!-- file input -->
+        <form action="/edit" method="post" enctype="multipart/form-data">
+
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Select an Image to edit</label>
+                <input class="form-control" type="file" name="file" id="formFile">
+            </div>
+            <div class="mb-3">
+                <div class="form-floating">
+                    <select name="operation" class="form-select" id="floatingSelect"
+                        aria-label="Floating label select example">
+                        <option selected>Choose an Operation</option>
+                        <option value="cpng">Convert to PNG</option>
+                        <option value="cgray">Convert to Grayscale</option>
+                        <option value="cwebp">Convert to Webp</option>
+                        <option value="cjpg">Convert to Jpg</option>
+                        <option value="Denoising">Convert to Denoising</option>
+                        <option value="Sharpening">Convert to Sharpening</option>
+                        <option value="equalization">Convert to equalization</option>
+                        <option value="rotate">Convert to rotate</option>
+                        <option value="blur">Convert to blur</option>
+                        <option value="edge">Convert to edge</option>
+                        <option value="RGB">Convert to RGB</option>
+                    </select>
+                    <label for="floatingSelect">Select an Editing Operation</label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+
+        </form>
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous">
+    </script>
+
+
+<!-- ----------------------------FOOTER------------------------- -->
+ 
+
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <h6>About</h6>
+        <p class="text-justify">ImageFormatter is a simple, intuitive web application designed to help users easily format and optimize images for the web. Whether you're a developer, designer, or photographer, our tool provides quick and efficient solutions for all your image formatting needs, supporting a wide range of formats and editing options. Our mission is to make image formatting accessible and hassle-free for everyone.</p>
+      </div>
+
+      <div class="col-xs-6 col-md-3">
+        <h6>Features</h6>
+        <ul class="footer-links">
+          <li><a href="#">Denoising</a></li>
+          <li><a href="#">Sharpening</a></li>
+          <li><a href="#">equalization</a></li>
+          <li><a href="#">edge</a></li>
+          <li><a href="#">RGB</a></li>
+          <li><a href="#">cwebp</a></li>
+        </ul>
+      </div>
+
+      <div class="col-xs-6 col-md-3">
+        <h6>Quick Links</h6>
+        <ul class="footer-links">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-sm-6 col-xs-12">
+        <p class="copyright-text">Copyright &copy; 2024 All Rights Reserved by 
+          <a href="#">ImageFormatter</a>.
+        </p>
+      </div>
+
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <ul class="social-icons">
+          <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
+          <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    
+</body>
+
+</html>
