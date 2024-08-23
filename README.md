@@ -41,7 +41,7 @@ python app.py
 Open your web browser and go to http://127.0.0.1:5000/ to access the web app.
 ## License
 
-This project is licensed under the MIT [MIT](https://choosealicense.com/licenses/mit/) License - see the LICENSE file for details.
+This project is licensed under the  [MIT](https://choosealicense.com/licenses/mit/) License - see the LICENSE file for details.
 
 
 ## Authors
